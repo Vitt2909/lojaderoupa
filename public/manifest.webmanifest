@@ -1,0 +1,18 @@
+{
+  "name": "Âmbar — Biblioteca Pessoal",
+  "short_name": "Âmbar",
+  "description": "Biblioteca digital pessoal com leitura de PDFs, offline e foco mobile-first.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E0C09",
+  "theme_color": "#0E0C09",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
