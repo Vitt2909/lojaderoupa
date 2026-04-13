@@ -17,6 +17,29 @@ Aplicação mobile-first em Next.js para leitura de PDFs sem login tradicional, 
   - `manifest.webmanifest`
   - service worker customizado com cache de PDFs e estáticos
 
+## Supabase configurado
+
+Crie um arquivo `.env` com:
+
+```env
+DATABASE_URL="postgresql://postgres:SEU_PASSWORD@db.farmbzhpiyzskvyhcaug.supabase.co:5432/postgres"
+NEXT_PUBLIC_SUPABASE_URL="https://farmbzhpiyzskvyhcaug.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY=""
+SUPABASE_SERVICE_ROLE_KEY=""
+```
+
+Schema Drizzle em `src/db/schema.ts`:
+
+- `users` (pin hash)
+- `books` (acervo compartilhado)
+- `user_books` (prateleira pessoal, progresso, highlights e anotações)
+
+Para sincronizar schema:
+
+```bash
+npm run db:push
+```
+
 ## Rodando localmente
 
 ```bash
@@ -25,10 +48,3 @@ npm run dev
 ```
 
 Abra em `http://localhost:3000`.
-
-## Próximos passos recomendados
-
-- Migrar persistência de `localStorage` para Supabase
-- Subir PDFs para Cloudflare R2
-- Trocar `iframe` por `react-pdf` para highlights por trecho real
-- Implementar indicador visual confiável de disponibilidade offline por livro
